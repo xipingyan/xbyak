@@ -229,9 +229,14 @@ enum {
 	ERR_SAME_REGS_ARE_INVALID,
 	ERR_INTERNAL // Put it at last.
 };
-
+#ifndef BOOST_STACKTRACE_USE_ADDR2LINE
+#define BOOST_STACKTRACE_USE_ADDR2LINE
+#endif
+// #include <boost/stacktrace.hpp>
 inline const char *ConvertErrorToString(int err)
 {
+	// std::cout << boost::stacktrace::stacktrace() << std::endl;
+	printf("%s:%d,=============>\n", __FUNCTION__, __LINE__);
 	static const char *errTbl[] = {
 		"none",
 		"bad addressing",
