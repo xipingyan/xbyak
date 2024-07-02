@@ -291,6 +291,11 @@ inline const char *ConvertErrorToString(int err)
 	return err <= ERR_INTERNAL ? errTbl[err] : "unknown err";
 }
 
+#ifndef XBYAK_NO_EXCEPTION
+#define XBYAK_NO_EXCEPTION
+#pragma message "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxping_ov_3rd"
+#endif
+
 #ifdef XBYAK_NO_EXCEPTION
 namespace local {
 
